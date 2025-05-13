@@ -1,0 +1,15 @@
+{% extends 'gallery/base.html' %}
+
+{% block content %}
+    <h1 class="text-3xl mb-4">Photo Gallery</h1>
+    <div class="grid grid-cols-3 gap-4">
+        {% for photo in photos %}
+            <div class="border p-4">
+                <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="w-full h-64 object-cover">
+                <h2 class="text-xl mt-2">{{ photo.title }}</h2>
+                <p>{{ photo.description }}</p>
+                <p><strong>Tags:</strong> {{ photo.tags }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

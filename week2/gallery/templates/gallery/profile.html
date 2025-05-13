@@ -1,0 +1,11 @@
+{% extends 'gallery/base.html' %}
+
+{% block content %}
+    <h1 class="text-3xl mb-4">Profile</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        <button type="submit" class="bg-blue-500 text-white p-2">Update Profile</button>
+    </form>
+{% endblock %}
